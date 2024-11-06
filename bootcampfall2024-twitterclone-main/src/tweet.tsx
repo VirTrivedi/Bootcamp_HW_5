@@ -15,9 +15,10 @@ interface TweetProps {
   username: string;
   content: string;
   initialLikes: number;
+  timeStamp: string;
 }
 
-const Tweet: React.FC<TweetProps> = ({ username, content, initialLikes }) => {
+const Tweet: React.FC<TweetProps> = ({ username, content, initialLikes, timeStamp }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(initialLikes);
 
@@ -35,6 +36,7 @@ const Tweet: React.FC<TweetProps> = ({ username, content, initialLikes }) => {
     <div className="tweet">
       <h2>@{username}</h2>
       <p>{content}</p>
+      <p>{timeStamp}</p>
       <div className="tweet-footer">
         <button onClick={handleLikeClick}>
           {isLiked ? "❤️" : "🤍"}

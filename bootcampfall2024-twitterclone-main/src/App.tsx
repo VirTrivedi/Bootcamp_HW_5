@@ -1,5 +1,4 @@
 // App.js
-import React from 'react';
 import Tweet from './tweet';
 import { tweetsData } from './data';
 
@@ -15,6 +14,7 @@ function App() {
           key={index}
           username={tweet.username}
           content={tweet.content}
+          timeStamp={tweet.timestamp}
           initialLikes={tweet.likes}
           />
         ))}
